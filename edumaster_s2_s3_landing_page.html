@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMaster S2/S3 - Pendampingan Tesis, Disertasi & Publikasi Jurnal</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#020617',
+                        },
+                        brand: {
+                            blue: '#4338CA',
+                            emerald: '#10B981',
+                            amber: '#F59E0B',
+                            purple: '#6D28D9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0F172A;
+            color: #F8FAFC;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(16, 185, 129, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38BDF8 0%, #3B82F6 50%, #10B981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-gold {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #4338CA, #10B981, #F59E0B);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0.5;
+            filter: blur(8px);
+            transition: opacity 0.3s ease;
+        }
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10B981;
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-200 selection:bg-emerald-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-amber-600 via-emerald-600 to-indigo-600 text-white text-xs md:text-sm py-2 px-4 text-center font-semibold tracking-wide flex items-center justify-center gap-2 shadow-md">
+        <span class="bg-white/20 px-2 py-0.5 rounded text-xs font-bold uppercase animate-pulse">⚡ LAYANAN KILAT</span>
+        <span>Layanan Darurat Tugas & Tesis 24 Jam Selesai | Garansi Lolos Turnitin & Target Lulus 1.5 Tahun!</span>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass-card bg-navy-900/90 border-b border-slate-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-emerald-500 flex items-center justify-center text-white text-xl font-black shadow-lg shadow-emerald-500/20">
+                        E
+                    </div>
+                    <div>
+                        <a href="#" class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1">
+                            EduMaster <span class="text-emerald-400 font-bold text-xs bg-emerald-950 border border-emerald-500/30 px-1.5 py-0.5 rounded">S2/S3</span>
+                        </a>
+                        <p class="text-[10px] text-slate-400 tracking-wider font-medium">PUSAT PENDAMPINGAN AKADEMIK</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#layanan" class="text-slate-300 hover:text-emerald-400 transition-colors">Layanan Tugas</a>
+                    <a href="#parsial" class="text-slate-300 hover:text-emerald-400 transition-colors">Parsial Tesis</a>
+                    <a href="#publikasi" class="text-slate-300 hover:text-emerald-400 transition-colors">Jurnal SINTA & Scopus</a>
+                    <a href="#paket" class="text-slate-300 hover:text-emerald-400 transition-colors">Paket Tesis</a>
+                    <a href="#kalkulator" class="text-slate-300 hover:text-emerald-400 transition-colors">Kalkulator Biaya</a>
+                    <a href="#faq" class="text-slate-300 hover:text-emerald-400 transition-colors">FAQ</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/6285262608383?text=Halo%20EduMaster,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20akademik%20S2/S3." 
+                       target="_blank" 
+                       class="glow-effect inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-emerald-500/25">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Konsultasi WA</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-950/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#layanan" class="block py-2 text-slate-300 hover:text-emerald-400">Layanan Tugas</a>
+            <a href="#parsial" class="block py-2 text-slate-300 hover:text-emerald-400">Parsial Tesis</a>
+            <a href="#publikasi" class="block py-2 text-slate-300 hover:text-emerald-400">Jurnal SINTA & Scopus</a>
+            <a href="#paket" class="block py-2 text-slate-300 hover:text-emerald-400">Paket Tesis S2</a>
+            <a href="#kalkulator" class="block py-2 text-slate-300 hover:text-emerald-400">Kalkulator Biaya</a>
+            <a href="#faq" class="block py-2 text-slate-300 hover:text-emerald-400">FAQ</a>
+            <div class="pt-2">
+                <a href="https://wa.me/6285262608383?text=Halo%20EduMaster,%20saya%20ingin%20konsultasi%20layanan%20akademik." 
+                   target="_blank" 
+                   class="w-full text-center flex items-center justify-center gap-2 bg-emerald-500 text-slate-950 font-bold px-4 py-3 rounded-xl">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Konsultasi via WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+        <!-- Background Gradient Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-indigo-600/20 to-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto space-y-6">
+                
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-2">
+                    <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                    <span>Garansi 100% Kerahasiaan (NDA) & Bebas Plagiasi Turnitin &lt; 15%</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                    Solusi Akademik S2 & S3 Terpercaya:<br/>
+                    <span class="gradient-text">Tugas Kuliah, Tesis, Disertasi & Publikasi Jurnal</span>
+                </h1>
+
+                <p class="text-slate-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+                    Pendampingan profesional dari penentuan judul, analisis data kompleks, pembuatan proposal, hingga terbit jurnal reputasi tinggi **SINTA 2-4** & **Scopus Q1-Q4**. Fokus karir Anda, biarkan tim mentor expert kami menyelesaikan kendala riset Anda.
+                </p>
+
+                <!-- Hero Buttons -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#kalkulator" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-emerald-500/20 transition-all flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Hitung Estimasi Biaya</span>
+                    </a>
+                    <a href="#paket" class="w-full sm:w-auto glass-card hover:bg-slate-800/80 text-white font-semibold text-base px-8 py-4 rounded-xl transition-all border border-slate-700 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-layer-group text-emerald-400"></i>
+                        <span>Lihat Paket Tesis Lulus 1.5 Thn</span>
+                    </a>
+                </div>
+
+                <!-- Stats / Highlights Grid -->
+                <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+                    <div class="glass-card p-4 rounded-2xl border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mb-1">1,450+</div>
+                        <div class="text-xs sm:text-sm text-slate-400">Klien Mahasiswa S2 & S3 Lulus</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-blue-400 mb-1">100%</div>
+                        <div class="text-xs sm:text-sm text-slate-400">Privasi & Identitas Terjamin</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 mb-1">&lt; 15%</div>
+                        <div class="text-xs sm:text-sm text-slate-400">Garansi Similarity Turnitin</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-purple-400 mb-1">24 Jam</div>
+                        <div class="text-xs sm:text-sm text-slate-400">Layanan Kilat Tugas & Makalah</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: LAYANAN TUGAS KULIAH (S2 & S3) -->
+    <section id="layanan" class="py-16 bg-navy-950/60 border-y border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Layanan Akademik Harian</h2>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-white">Layanan Tugas Kuliah, Makalah & Tools Spesifik</h3>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Dukungan penuh untuk seluruh beban perkuliahan Magister & Doktoral Anda dengan pengerjaan terstruktur, ilmiah, dan tepat waktu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Tugas Kuliah -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Tugas Kuliah S2 & S3</h4>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Pengerjaan tugas harian/mingguan tingkat lanjut (Ringan, Sedang, hingga Tugas Berat/Critical Book Review) sesuai pedoman kampus Anda.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Sumber referensi jurnal bereputasi</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Format sitasi APA, Harvard, Chicago, dll.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Makalah + PPT -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover transition-all border-emerald-500/30 relative overflow-hidden">
+                    <span class="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold px-2 py-0.5 rounded">TERPOPULER</span>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-file-powerpoint"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Pembuatan Makalah + Slide PPT</h4>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Makalah ilmiah mendalam lengkap dengan **Slide Presentasi PPT** estetis, komunikatif, dan siap dipresentasikan di depan dosen & forum kelas.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Lengkap dengan Speaker Notes</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Desain slide modern & tidak kaku</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Layanan Darurat 24 Jam -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover transition-all border-amber-500/30">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Layanan Darurat / Ekspres (24 Jam)</h4>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Deadline mepet besok pagi? Tim khusus siap bekerja secara simultan agar tugas/artikel selesai dalam **1 hari (24 jam)** dengan kualitas terjaga.
+                    </p>
+                    <span class="inline-block text-xs text-amber-300 bg-amber-950/60 border border-amber-500/30 px-2.5 py-1 rounded font-semibold">
+                        ⚡ Jalur Bebas Antrean Kebal Deadline
+                    </span>
+                </div>
+
+                <!-- Card 4: Parafrase & Turnitin -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Parafrase & Turnitin &lt; 15%</h4>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Teknik rephrase ilmiah tingkat tinggi tanpa mengubah makna penelitian. Menurunkan skor plagiarisme Turnitin dari 40-60% menjadi **di bawah 15%**.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Tanpa Spinner / AI Generator murahan</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Laporan Turnitin Resmi No Repository</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5: Proofreading & Academic English -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/40 text-purple-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Proofreading & Translation</h4>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Penerjemahan & penyelarasan naskah ke standar *Academic English*. Memastikan kosa kata sesuai terminologi jurnal internasional terindeks.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Grammarly Premium Score 95+</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Pengecekan Gaya Bahasa & Flow Paragraf</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6: Olah Data & Metodologi -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Olah Data Kuantitatif & Kualitatif</h4>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Pengolahan data mutakhir menggunakan software akademik pilihan. Disertai interpretasi output terperinci yang mudah Anda pahami saat ujian sidang.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 text-[11px] font-medium text-slate-300">
+                        <span class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">SPSS</span>
+                        <span class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">SmartPLS</span>
+                        <span class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">AMOS</span>
+                        <span class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">STATA</span>
+                        <span class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">EViews</span>
+                        <span class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">NVivo</span>
+                        <span class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">VOSviewer</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: LAYANAN PARSIAL TESIS / DISERTASI -->
+    <section id="parsial" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-8 md:p-12 rounded-3xl border-indigo-500/30 bg-gradient-to-r from-navy-900 via-indigo-950/40 to-navy-900 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="inline-block px-3 py-1 rounded-md bg-indigo-500/20 text-indigo-300 text-xs font-bold border border-indigo-500/30">
+                            SOLUSI HEMAT & MODULAR
+                        </div>
+                        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">Butuh Bantuan Parsial Saja? (Hanya Proposal / Bab 4-5)</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Jika Anda mengalami *stuck* di pertengahan jalan, tidak perlu mengambil paket full. Pilih bagian yang paling Anda butuhkan dengan harga yang sangat terjangkau.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <!-- Option 1 -->
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                <div class="text-emerald-400 font-bold text-lg mb-1">Proposal Tesis (Bab 1–3)</div>
+                                <div class="text-2xl font-extrabold text-white mb-1">Mulai Rp 3.000.000-an</div>
+                                <p class="text-slate-400 text-xs">Penentuan judul, Latar Belakang kuat, Grand Theory, Framework, & Metodologi Penelitian.</p>
+                            </div>
+                            <!-- Option 2 -->
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                <div class="text-blue-400 font-bold text-lg mb-1">Olah Data & Bab 4–5</div>
+                                <div class="text-2xl font-extrabold text-white mb-1">Mulai Rp 3.000.000-an</div>
+                                <p class="text-slate-400 text-xs">Eksekusi olah data, pembahasan hasil analisis, kontribusi ilmiah, hingga Kesimpulan & Saran.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 text-center space-y-4">
+                        <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Konsultasikan Bagian Mampet Anda</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Kirimkan draft tesis/disertasi yang Anda miliki saat ini. Tim ahli kami akan memberikan *review gratis* awal dan penawaran parsial terbaik.
+                        </p>
+                        <a href="https://wa.me/6285262608383?text=Halo%20EduMaster,%20saya%20butuh%20bantuan%20layanan%20parsial%20Tesis/Disertasi." 
+                           target="_blank" 
+                           class="w-full inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 px-4 rounded-xl transition-all">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Kirim Draft via Whatsapp</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PUBLIKASI JURNAL SINTA & SCOPUS -->
+    <section id="publikasi" class="py-16 bg-navy-950/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">PUBLIKASI BEREPUTASI</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1">Layanan Publikasi Jurnal SINTA & Scopus</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Jaminan pendampingan dari penulisan artikel ilmiah, submit, revisi reviewer, hingga terbit (*Published*).
+                    Khusus Scopus, kami prioritaskan target jurnal **Free APC / Diskon APC** untuk efisiensi biaya Anda.
+                </p>
+            </div>
+
+            <!-- Price Cards Grid for Journals -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- SINTA 4 -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-slate-800 text-slate-300 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">Nasional Terakreditasi</span>
+                            <span class="text-xs text-slate-400">SINTA 4</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Jurnal SINTA 4</h3>
+                        <p class="text-slate-400 text-xs mb-4">Cocok untuk kelulusan S1/S2 dengan proses relatif lebih cepat.</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-xs text-slate-400">Mulai Dari</span>
+                            <div class="text-3xl font-black text-emerald-400">Rp 1.700.000</div>
+                        </div>
+
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Penyesuaian Template Jurnal</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Pendampingan Submit s.d LoA</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Garansi Terbit Resmi</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20tertarik%20layanan%20Publikasi%20SINTA%204." target="_blank" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors">
+                        Pesan SINTA 4
+                    </a>
+                </div>
+
+                <!-- SINTA 3 -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-slate-800 text-slate-300 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">Nasional Terakreditasi</span>
+                            <span class="text-xs text-slate-400">SINTA 3</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Jurnal SINTA 3</h3>
+                        <p class="text-slate-400 text-xs mb-4">Standar kelulusan Magister & kenaikan jabatan akademik dosen.</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-xs text-slate-400">Mulai Dari</span>
+                            <div class="text-3xl font-black text-emerald-400">Rp 3.000.000-an</div>
+                        </div>
+
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Formatting & Peer-Review Internal</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Respon Komentar Reviewer</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Bebas Plagiasi Turnitin &lt; 20%</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20tertarik%20layanan%20Publikasi%20SINTA%203." target="_blank" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors">
+                        Pesan SINTA 3
+                    </a>
+                </div>
+
+                <!-- SINTA 2 -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover border-emerald-500/50 flex flex-col justify-between relative">
+                    <span class="absolute -top-3 right-4 bg-emerald-500 text-slate-950 font-extrabold text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider">INCLUDE PUBLICATION FEE</span>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold px-3 py-1 rounded-full">SINTA Highly Reputable</span>
+                            <span class="text-xs text-emerald-400 font-bold">SINTA 2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Jurnal SINTA 2</h3>
+                        <p class="text-slate-400 text-xs mb-4">Publikasi bereputasi tinggi. **Sudah termasuk biaya publikasi (APC)** ke pengelola jurnal.</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-xs text-slate-400">Mulai Dari</span>
+                            <div class="text-3xl font-black text-emerald-400">Rp 7.000.000-an</div>
+                        </div>
+
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> **Sudah Termasuk APC / Biaya Terbit**</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Bantuan Response to Reviewers</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> High Impact Factor Standard</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20tertarik%20layanan%20Publikasi%20SINTA%202." target="_blank" class="w-full text-center bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-colors">
+                        Pesan SINTA 2 (All-In)
+                    </a>
+                </div>
+
+                <!-- SCOPUS Q3 & Q4 -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover border-indigo-500/40 flex flex-col justify-between lg:col-span-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-indigo-500/20 text-indigo-300 text-xs font-bold px-3 py-1 rounded-full border border-indigo-500/30">International Journal</span>
+                            <span class="text-xs text-indigo-400 font-bold">SCOPUS Q3/Q4</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">SCOPUS Q3 & Q4</h3>
+                        <p class="text-slate-400 text-xs mb-4">Target jurnal bereputasi internasional untuk syarat wajib S2/S3 & Guru Besar.</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-xs text-slate-400">Rentang Biaya Pendampingan</span>
+                            <div class="text-2xl font-black text-indigo-300">Rp 15 Juta – Rp 25 Juta</div>
+                        </div>
+
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> **Target Jurnal Free APC / Diskon APC**</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Free Academic English Proofreading</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Pendampingan Hingga LoA & Indexed</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20tertarik%20layanan%20SCOPUS%20Q3/Q4." target="_blank" class="w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors">
+                        Konsultasi Scopus Q3/Q4
+                    </a>
+                </div>
+
+                <!-- SCOPUS Q1 & Q2 -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover border-amber-500/50 flex flex-col justify-between lg:col-span-2 relative bg-gradient-to-br from-navy-900 via-indigo-950/20 to-navy-900">
+                    <span class="absolute top-3 right-4 bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full">TOP TIER INTERNATIONAL</span>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-500/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/30">Flagship Journal</span>
+                            <span class="text-xs text-amber-400 font-bold">SCOPUS Q1/Q2</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2">SCOPUS Q1 & Q2 (High Impact Factor)</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm mb-4">Publikasi jurnal kasta tertinggi dunia (Elsevier, Springer, Wiley, Taylor & Francis, IEEE). Sangat cocok untuk Disertasi Doktoral (S3).</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                                <span class="text-xs text-slate-400">Rentang Biaya Pendampingan</span>
+                                <div class="text-2xl font-black gradient-gold">Rp 25 Juta – Rp 35 Juta</div>
+                            </div>
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                                <span class="text-xs text-slate-400">Skema Penghematan Biaya</span>
+                                <div class="text-xs font-semibold text-emerald-400 mt-1">Dicarikan Jurnal Free APC / APC Discount Waiver</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 mb-6">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Menerjemahkan ke Standard Native Academic English</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Simulasi Reviewer Komite sebelum Submit</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Bantuan Re-submission jika diperlukan</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Garansi Pendampingan Revisi Mayor & Minor</div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20tertarik%20layanan%20VIP%20SCOPUS%20Q1/Q2." target="_blank" class="w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold py-3 rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20">
+                        Konsultasi VIP Scopus Q1/Q2
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: PAKET UTAMA TESIS S2 (PRICING TABLE) -->
+    <section id="paket" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">PAKET COMPREHENSIVE S2</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Daftar Paket Pendampingan Tesis S2</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-3">Pilih paket pendampingan all-in yang paling pas dengan target waktu dan kebutuhan akademis Anda.</p>
+            </div>
+
+            <!-- 4 PRICING CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+
+                <!-- 1. REGULER -->
+                <div class="glass-card p-6 rounded-3xl border-slate-800 flex flex-col justify-between glass-card-hover transition-all">
+                    <div>
+                        <div class="text-center pb-6 border-b border-slate-800">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">PAKET ECONOMY</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">REGULER TESIS</h3>
+                            <div class="mt-4">
+                                <span class="text-3xl font-extrabold text-white">Rp 7 Juta-an</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400 mt-2">Paling terjangkau untuk mahasiswa yang sudah punya gambaran judul.</p>
+                        </div>
+
+                        <ul class="py-6 space-y-3 text-xs text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Full Tesis Bab 1 s.d. Bab 5 Lengkap</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>**GRATIS Artikel Konferensi Internasional**</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Olah Data Standard (SPSS/SmartPLS)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Pendampingan Revisi Dosen</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20ingin%20mengambil%20Paket%20REGULER%20TESIS." target="_blank" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition-colors">
+                        Pilih Reguler
+                    </a>
+                </div>
+
+                <!-- 2. VIP TESIS -->
+                <div class="glass-card p-6 rounded-3xl border-slate-800 flex flex-col justify-between glass-card-hover transition-all">
+                    <div>
+                        <div class="text-center pb-6 border-b border-slate-800">
+                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">BEST VALUE</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">VIP TESIS</h3>
+                            <div class="mt-4">
+                                <span class="text-3xl font-extrabold text-indigo-300">Rp 9.000.000</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400 mt-2">Dibantu dari nol & mendapatkan luaran jurnal SINTA 3.</p>
+                        </div>
+
+                        <ul class="py-6 space-y-3 text-xs text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Dibantu dari **NOL (0)** sampai Lulus</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>**GRATIS Artikel Konferensi Internasional**</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>**GRATIS Artikel Jurnal SINTA 3**</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Simulasi & Kisi-kisi Pertanyaan Sidang</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20ingin%20mengambil%20Paket%20VIP%20TESIS." target="_blank" class="w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl text-xs transition-colors">
+                        Pilih VIP Tesis
+                    </a>
+                </div>
+
+                <!-- 3. VVIP TESIS -->
+                <div class="glass-card p-6 rounded-3xl border-emerald-500/50 flex flex-col justify-between glass-card-hover transition-all relative">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 font-black text-[10px] px-3 py-0.5 rounded-full uppercase tracking-wider">RECOMMENDED</span>
+                    <div>
+                        <div class="text-center pb-6 border-b border-slate-800">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">HIGH PUBLICATION</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">VVIP TESIS</h3>
+                            <div class="mt-4">
+                                <span class="text-3xl font-extrabold text-emerald-400">Rp 12.000.000</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400 mt-2">Target publikasi jurnal SINTA 2 dengan jaminan kualitas tinggi.</p>
+                        </div>
+
+                        <ul class="py-6 space-y-3 text-xs text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Full Pendampingan Tesis dari NOL (0)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>**GRATIS Full Paper Konferensi Internasional**</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>**GRATIS Artikel Jurnal SINTA 2**</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span>Include Grammarly Premium & Turnitin &lt; 15%</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20ingin%20mengambil%20Paket%20VVIP%20TESIS." target="_blank" class="w-full text-center bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold py-3 rounded-xl text-xs transition-colors shadow-lg shadow-emerald-500/20">
+                        Pilih VVIP Tesis
+                    </a>
+                </div>
+
+                <!-- 4. SUPER VVIP TESIS (HIGHLIGHT 1.5 TAHUN) -->
+                <div class="glass-card p-6 rounded-3xl border-amber-500/60 bg-gradient-to-b from-slate-900 via-indigo-950/30 to-slate-900 flex flex-col justify-between glass-card-hover transition-all relative glow-effect">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black text-[10px] px-3 py-0.5 rounded-full uppercase tracking-wider shadow-md">
+                        🔥 FAST TRACK LULUS 1.5 TAHUN
+                    </span>
+
+                    <div>
+                        <div class="text-center pb-6 border-b border-slate-800">
+                            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">ULTIMATE ALL-INCLUSIVE</span>
+                            <h3 class="text-2xl font-bold text-white mt-1">SUPER VVIP TESIS</h3>
+                            <div class="mt-4">
+                                <span class="text-3xl font-extrabold gradient-gold">Rp 15.000.000</span>
+                            </div>
+                            <p class="text-[11px] text-amber-300/80 mt-2 font-medium">Bebas Pusing Tugas Kuliah + Tesis + Publikasi selama 3 Semester!</p>
+                        </div>
+
+                        <ul class="py-6 space-y-3 text-xs text-slate-200">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-star text-amber-400 mt-0.5"></i>
+                                <span>Full Tesis dari NOL (0) sampai Wisuda</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-star text-amber-400 mt-0.5"></i>
+                                <span>**FREE Pengerjaan Tugas Kuliah Selama 3 Semester**</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-star text-amber-400 mt-0.5"></i>
+                                <span>**FREE Jurnal SINTA 2 + Konferensi** (Siap dibantu akomodasi)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-star text-amber-400 mt-0.5"></i>
+                                <span>Prioritas Layanan Utama Mentor VVIP</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/6285262608383?text=Halo,%20saya%20sangat%20tertarik%20dengan%20Paket%20SUPER%20VVIP%20TESIS%20(Target%20Lulus%201.5%20Tahun)." target="_blank" class="w-full text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold py-3 rounded-xl text-xs transition-all shadow-xl shadow-amber-500/25">
+                        Ambil Paket Lulus 1.5 Thn
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: KALKULATOR ESTIMASI BIAYA INTERAKTIF -->
+    <section id="kalkulator" class="py-16 bg-navy-950/90 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">SIMULASI TRANSPARAN</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1">Kalkulator Estimasi Biaya & Pesan WhatsApp</h2>
+                <p class="text-slate-400 text-xs sm:text-sm mt-2">Hitung perkiraan biaya secara real-time dan dapatkan draf ringkasan pesanan langsung ke WhatsApp admin.</p>
+            </div>
+
+            <div class="glass-card p-6 md:p-10 rounded-3xl border-slate-800 shadow-2xl">
+                <form id="calcForm" class="space-y-6">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Select Jenjang -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Jenjang Pendidikan</label>
+                            <select id="calcJenjang" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                <option value="S2" selected>Magister (S2)</option>
+                                <option value="S3">Doktoral (S3)</option>
+                                <option value="S1">Sarjana (S1)</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Layanan -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Pilih Jenis Layanan Utama</label>
+                            <select id="calcLayanan" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                <optgroup label="Tugas Kuliah & Harian">
+                                    <option value="makalah_ppt" data-price="500000">Makalah Akademik + PPT Presentasi (Rp 500rb)</option>
+                                    <option value="tugas_ekspres" data-price="600000">Layanan Darurat 24 Jam Selesai (Rp 600rb)</option>
+                                    <option value="parafrase" data-price="350000">Parafrase & Turnitin &lt; 15% (Rp 350rb)</option>
+                                </optgroup>
+                                <optgroup label="Parsial Tesis">
+                                    <option value="proposal" data-price="3000000">Proposal Tesis Bab 1-3 (Rp 3.000.000)</option>
+                                    <option value="olahdata" data-price="3000000">Olah Data & Bab 4-5 (Rp 3.000.000)</option>
+                                </optgroup>
+                                <optgroup label="Publikasi Jurnal">
+                                    <option value="sinta4" data-price="1700000">Jurnal SINTA 4 (Rp 1.700.000)</option>
+                                    <option value="sinta3" data-price="3000000">Jurnal SINTA 3 (Rp 3.000.000)</option>
+                                    <option value="sinta2" data-price="7000000">Jurnal SINTA 2 Include APC (Rp 7.000.000)</option>
+                                    <option value="scopus_q3q4" data-price="15000000">SCOPUS Q3 / Q4 (Free APC Target) (Rp 15.000.000)</option>
+                                    <option value="scopus_q1q2" data-price="25000000">SCOPUS Q1 / Q2 (Free APC Target) (Rp 25.000.000)</option>
+                                </optgroup>
+                                <optgroup label="Paket Tesis S2 Complete">
+                                    <option value="reguler" data-price="7000000">Paket Reguler Tesis + Konferensi (Rp 7.000.000)</option>
+                                    <option value="vip" data-price="9000000">Paket VIP Tesis + SINTA 3 (Rp 9.000.000)</option>
+                                    <option value="vvip" data-price="12000000">Paket VVIP Tesis + SINTA 2 (Rp 12.000.000)</option>
+                                    <option value="super_vvip" data-price="15000000" selected>SUPER VVIP (Bebas Tugas 3 Sem + Target 1.5 Thn) (Rp 15.000.000)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <!-- Select Target Waktu / Deadline -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Target Waktu (Deadline)</label>
+                            <select id="calcDeadline" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                <option value="1.0" selected>Standar (7–14 Hari Kerja)</option>
+                                <option value="1.2">Kilat (3–5 Hari Kerja) [+20%]</option>
+                                <option value="1.4">Super Ekspres (24–48 Jam) [+40%]</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Opsi Pembayaran -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Skema Pembayaran</label>
+                            <select id="calcTermin" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                <option value="termin">Pembayaran Bertahap / Termin (DP Progress per Bab)</option>
+                                <option value="cash">Pelunasan Langsung (Diskon Khusus 5%)</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Additional Options Checkboxes -->
+                    <div class="pt-2 border-t border-slate-800">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Layanan Tambahan (Opsional)</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="flex items-center gap-3 bg-slate-900 p-3 rounded-xl border border-slate-800 cursor-pointer">
+                                <input type="checkbox" id="addFastTrack" value="500000" class="w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500 bg-slate-800 border-slate-700">
+                                <span class="text-xs text-slate-300">Prioritas Fast-Track Revisi (+Rp 500.000)</span>
+                            </label>
+                            <label class="flex items-center gap-3 bg-slate-900 p-3 rounded-xl border border-slate-800 cursor-pointer">
+                                <input type="checkbox" id="addProofread" value="400000" class="w-4 h-4 text-emerald-500 rounded focus:ring-emerald-500 bg-slate-800 border-slate-700">
+                                <span class="text-xs text-slate-300">Proofreading English & Grammarly (+Rp 400.000)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Result Display Box -->
+                    <div class="bg-gradient-to-r from-navy-950 via-indigo-950 to-navy-950 p-6 rounded-2xl border border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs text-slate-400 font-medium">Estimasi Biaya Investasi Akademik:</span>
+                            <div class="text-3xl sm:text-4xl font-black text-emerald-400" id="totalPriceDisplay">
+                                Rp 15.000.000
+                            </div>
+                            <span class="text-[11px] text-slate-400" id="paymentNote">*Dapat dicicil per bab/progres (Termin)</span>
+                        </div>
+
+                        <button type="button" id="btnSendWA" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-sm shadow-lg shadow-emerald-500/20">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan & Konsultasi Sekarang</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: FITUR UNGGULAN & GARANSI KAMI -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Mengapa EduMaster Berbeda & Terpercaya?</h2>
+                <p class="text-slate-400 text-sm mt-2">Komitmen utama kami adalah menjaga integritas, keamanan, dan keberhasilan studi Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 border border-blue-500/30">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">100% Confidentiality / NDA</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Identitas Anda, nama universitas, dan seluruh file data penelitian dijamin aman dan rahasia selamanya.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 border border-emerald-500/30">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Sistem Pembayaran Bertahap</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Bayar sesuai progres pengerjaan (DP awal, Progres Bab 1-3, Progres Bab 4-5, Publikasi).</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 border border-amber-500/30">
+                        <i class="fa-solid fa-copy"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Anti-Plagiasi (Turnitin &lt; 15%)</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">LaporanTurnitin resmi non-repository gratis di setiap penyerahan draf tesis atau naskah jurnal.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 border border-purple-500/30">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Tim Mentor Gelar S2 & S3</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Didampingi langsung oleh akademisi, praktisi data, dan reviewer jurnal nasional & internasional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FAQ (ACCORDION) -->
+    <section id="faq" class="py-16 bg-navy-950/80 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">PERTANYAAN POPULER</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1">Pertanyaan yang Sering Diajukan</h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+                    <button class="faq-toggle w-full text-left p-5 flex items-center justify-between text-white font-bold text-sm sm:text-base focus:outline-none">
+                        <span>Apakah rahasia identitas dan tesis saya terjamin aman?</span>
+                        <i class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/50 pt-3">
+                        Sangat terjamin! Kami menerapkan *Non-Disclosure Agreement (NDA)* ketat. Nama Anda, judul tesis, data mentah, dan universitas tidak akan pernah dipublikasikan atau dijual ulang ke pihak mana pun.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+                    <button class="faq-toggle w-full text-left p-5 flex items-center justify-between text-white font-bold text-sm sm:text-base focus:outline-none">
+                        <span>Bagaimana jika tesis dikembalikan oleh dosen pembimbing (Revisi)?</span>
+                        <i class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/50 pt-3">
+                        Seluruh paket pendampingan kami sudah termasuk **Garansi Pendampingan Revisi** dari Dosen Pembimbing hingga proposal / tesis Anda disetujui (ACC) untuk diujikan.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+                    <button class="faq-toggle w-full text-left p-5 flex items-center justify-between text-white font-bold text-sm sm:text-base focus:outline-none">
+                        <span>Bagaimana sistem pencarian jurnal Scopus Free APC?</span>
+                        <i class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/50 pt-3">
+                        Tim riset jurnal kami akan mengidentifikasi penerbit bereputasi (seperti Elsevier, Springer, Wiley, Taylor & Francis) yang tidak mengenakan Article Processing Charge (APC 0 / Free) atau menyediakan program waiver/diskon khusus bagi penulis.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+                    <button class="faq-toggle w-full text-left p-5 flex items-center justify-between text-white font-bold text-sm sm:text-base focus:outline-none">
+                        <span>Apakah pengerjaan tugas kilat 24 jam benar-benar bisa selesai tepat waktu?</span>
+                        <i class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/50 pt-3">
+                        Ya, kami memiliki *Tim Timbal Balik Express* yang siap bekerja paralel. Tugas Anda langsung dialokasikan ke mentor ahli yang stand-by tanpa melewati masa antrean reguler.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 border-t border-slate-800 py-12 text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black">E</div>
+                        <span class="text-base font-extrabold text-white">EduMaster S2/S3</span>
+                    </div>
+                    <p class="leading-relaxed">Pusat Konsultasi & Pendampingan Akademik Profesional Khusus Magister (S2) dan Doktoral (S3) di Indonesia.</p>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider">Layanan Utama</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#layanan" class="hover:text-emerald-400">Makalah + Slide PPT Presentasi</a></li>
+                        <li><a href="#layanan" class="hover:text-emerald-400">Parafrase & Turnitin &lt; 15%</a></li>
+                        <li><a href="#layanan" class="hover:text-emerald-400">Olah Data SPSS, SmartPLS, NVivo</a></li>
+                        <li><a href="#parsial" class="hover:text-emerald-400">Proposal & Bab 4-5 Tesis</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider">Publikasi & Paket</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#publikasi" class="hover:text-emerald-400">Jurnal SINTA 4, SINTA 3, SINTA 2</a></li>
+                        <li><a href="#publikasi" class="hover:text-emerald-400">Jurnal Scopus Q1, Q2, Q3, Q4</a></li>
+                        <li><a href="#paket" class="hover:text-emerald-400">Paket Reguler & VIP Tesis</a></li>
+                        <li><a href="#paket" class="hover:text-emerald-400">Super VVIP Target Lulus 1.5 Thn</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider">Kontak Resmi</h5>
+                    <p class="mb-2"><i class="fa-solid fa-clock text-emerald-400 mr-2"></i> Layanan 24 Jam Nonstop</p>
+                    <p class="mb-2"><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i> WA Admin: +62 812-3456-7890</p>
+                    <p><i class="fa-solid fa-shield-halved text-emerald-400 mr-2"></i> Guaranteed NDA Privacy Policy</p>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800/80 pt-6 text-center text-[11px] text-slate-500">
+                &copy; 2026 EduMaster Pendampingan Akademik. All Rights Reserved. Designed for Excellence.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6285262608383?text=Halo%20EduMaster,%20saya%20butuh%20bantuan%20layanan%20akademik." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-slate-950 w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition-all transform hover:scale-110 glow-effect"
+       title="Chat via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile drawer when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. FAQ Accordion Toggle
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // 3. Calculator Logic & Dynamic WA Text
+        const calcJenjang = document.getElementById('calcJenjang');
+        const calcLayanan = document.getElementById('calcLayanan');
+        const calcDeadline = document.getElementById('calcDeadline');
+        const calcTermin = document.getElementById('calcTermin');
+        const addFastTrack = document.getElementById('addFastTrack');
+        const addProofread = document.getElementById('addProofread');
+        const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+        const paymentNote = document.getElementById('paymentNote');
+        const btnSendWA = document.getElementById('btnSendWA');
+
+        function calculateTotal() {
+            // Get base price from selected option
+            const selectedLayanan = calcLayanan.options[calcLayanan.selectedIndex];
+            let basePrice = parseFloat(selectedLayanan.getAttribute('data-price')) || 0;
+
+            // Apply deadline multiplier
+            const multiplier = parseFloat(calcDeadline.value) || 1.0;
+            let currentTotal = basePrice * multiplier;
+
+            // Add extra add-ons
+            if (addFastTrack.checked) currentTotal += parseFloat(addFastTrack.value);
+            if (addProofread.checked) currentTotal += parseFloat(addProofread.value);
+
+            // Discount if Cash Paid upfront
+            if (calcTermin.value === 'cash') {
+                currentTotal = currentTotal * 0.95; // 5% discount
+                paymentNote.innerText = '*Termasuk diskon 5% untuk pelunasan langsung';
+            } else {
+                paymentNote.innerText = '*Dapat dicicil per bab/progres (Sistem Termin)';
+            }
+
+            // Format to IDR Currency
+            const formattedPrice = new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                maximumFractionDigits: 0
+            }).format(currentTotal);
+
+            totalPriceDisplay.innerText = formattedPrice;
+
+            return {
+                priceText: formattedPrice,
+                jenjangText: calcJenjang.value,
+                layananText: selectedLayanan.text,
+                deadlineText: calcDeadline.options[calcDeadline.selectedIndex].text,
+                terminText: calcTermin.options[calcTermin.selectedIndex].text
+            };
+        }
+
+        // Attach Event Listeners
+        [calcJenjang, calcLayanan, calcDeadline, calcTermin, addFastTrack, addProofread].forEach(elem => {
+            elem.addEventListener('change', calculateTotal);
+        });
+
+        // Initial Calculation
+        calculateTotal();
+
+        // 4. WhatsApp Message Generator
+        btnSendWA.addEventListener('click', () => {
+            const data = calculateTotal();
+            
+            let message = `Halo Admin EduMaster,%0A%0ASaya ingin berkonsultasi mengenai pesanan layanan akademik berikut:%0A`;
+            message += `• *Jenjang Pendidikan:* ${encodeURIComponent(data.jenjangText)}%0A`;
+            message += `• *Jenis Layanan:* ${encodeURIComponent(data.layananText)}%0A`;
+            message += `• *Target Waktu:* ${encodeURIComponent(data.deadlineText)}%0A`;
+            message += `• *Skema Pembayaran:* ${encodeURIComponent(data.terminText)}%0A`;
+            
+            if (addFastTrack.checked) message += `• *Tambahan:* Fast-Track Prioritas Revisi%0A`;
+            if (addProofread.checked) message += `• *Tambahan:* Proofreading & Grammarly Premium%0A`;
+
+            message += `%0A• *Estimasi Biaya:* ${encodeURIComponent(data.priceText)}%0A%0A`;
+            message += `Mohon info ketersediaan mentor dan alur pembayarannya. Terima kasih!`;
+
+            const phone = "6285262608383";
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
